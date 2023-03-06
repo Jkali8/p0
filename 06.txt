@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant browser
+    participant server
+	
+	browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+	the browser request header specifys the content-type to the server as application/json
+    activate server
+    server-->>browser: status code 201 
+	the browser stays on the same page, and it sends no further HTTP requests.
+    deactivate server
